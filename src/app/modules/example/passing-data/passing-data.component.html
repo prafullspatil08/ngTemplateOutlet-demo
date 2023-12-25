@@ -1,1 +1,54 @@
-<p>passing-data works!</p>
+<h1>Example 1 </h1>
+<ng-template let-value="value" #messageTemplate>
+  <p>Value received from the parent is {{ value }}</p>
+</ng-template>
+
+
+<ng-container [ngTemplateOutlet]="messageTemplate" [ngTemplateOutletContext]="{value:2000}">
+</ng-container>
+
+<!-- <ng-container *ngTemplateOutlet="messageTemplate; context: { value: 2000 }">
+</ng-container> -->
+
+<!-- <h1>Example 2</h1> -->
+<!-- Pass more than one value. -->
+
+<!-- <ng-template let-name="nameVar" let-message="messageVar" #template3>
+  <p>Hello {{ name }}, {{ message }}</p>
+</ng-template>
+
+<ng-container
+  [ngTemplateOutlet]="template3"
+  [ngTemplateOutletContext]="{
+    nameVar: 'everyone',
+    messageVar: 'Welcome to our Angular Tech talk'
+  }"
+>
+</ng-container> -->
+
+<!-- <h1>Example 3 using $implicit</h1> -->
+<!-- using $implicit -->
+
+<!-- <ng-template let-name let-message="message" #template4>
+    <p>Hello {{name}}, {{message}}</p>
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="template4" [ngTemplateOutletContext]="{$implicit:'everyone', message:'Welcome to our tech talk'}"></ng-container> -->
+
+<!-- <h1>Example 4</h1> -->
+<!-- try with both name and message -->
+
+<!-- <ng-template let-name let-message #template4>
+    <p>Hello {{name}}, {{message}}</p>
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="template4" [ngTemplateOutletContext]="{$implicit:'everyone', message:'Welcome to our tech talk'}"></ng-container> -->
+
+<!-- <h1>Example 5</h1> -->
+<!-- pass an object -->
+
+<!-- <ng-template let-person="person" #template5>
+    <p>Hello {{person?.name}}, {{person?.message}}</p>
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="template5" [ngTemplateOutletContext]="{person: {name:'everyone', message:'Welcome to our tech talk'}}"></ng-container> -->
